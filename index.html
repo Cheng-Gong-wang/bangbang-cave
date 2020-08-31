@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+
+        @font-face {
+            font-family: "iconfont";
+            src: url('iconfont.eot?t=1592815378079');
+            /* IE9 */
+            src: url('iconfont.eot?t=1592815378079#iefix') format('embedded-opentype'),
+                /* IE6-IE8 */
+                url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAM4AAsAAAAAB3AAAALsAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqCeII0ATYCJAMICwYABCAFhG0HMhtcBsiemjwRaEbD1ihUbdLmBnLZiYfv117P3X3/52U3gKQy8dBWEyliBwCqNbLGVbXG1APaumZe/6os5HQLsyI+ksyfz5fJqoJ9ZH0lVFR7RQd3N/f0EgoCqlAiamEAUgGW0PnNtwv+z+e5nN61BecHynHtTZN6US+MAwp0DyuKEi2gAw1EG8ZuojyI2wQqExLY7KlqaAbOErAoENckwgHnlFmqqQ1ZaJbsTOI9B7l4WxTwjn8/fsF6ZAqNEmjYf6FSBCVfQ2GB3ZOdMd2UIBnPCW0fJdYAiThc6t7LLkyvsVM5aXszwLpqg6/0fype7R+PIJpAdRsYE8XnJMHSU6WyAAkZ1wEvewXIXYDjUf3AIdt6EhC7/SKa7D4NjNt56S+Se58k9s5ZjHj7s8bdvcyuE6dNi7e06AI50lZkbW7rYm9u9d7Tv/Mh4E74XrD/Ftgr3D4MvBs0HhR0L+z076fluq2G53V/vh7r2P9v7vjjWz3EfTDgvMJD3bbr73pf+A37DPt59YXtbG+L2t6lmovD65efPOhhcB+UB4+Nlj70j1nDf2nqD6t1ps1+N93ddDxnRXU6KAGi5Qnb1/+BGv9ydJ/0KnjOdQJfcM2XG5N2XvLZeoK3LmnZk1wZsBTJlpTmC9c5301TpcIO2d/jc199/y3mQ9Z/o94W4zFK2RyZmGtoqG2gKdtEZVX1/lovyk6kVqyYFhC6PEKhw0eUunwgE/MaDQO+oKkrSlSOht+JtYW47FpOEceQCPkRKAm6hpGNuQa1jYgMKBxNyji3FVGLFIOpSSnZXDXSEB1jjWWQpDGGIaa6CquE+5Ci6NCguhkJLMnEmJGXnIzLXpQk6CpwtRuFcBhEBPFGQBKBToPpaMY19/lGCDFAwaE1XR3RVghlIU0OpUqS0oKsVmutuq7lGYtBRBqGwSCM0qmgKsGJKDCtg4zyaWaIgEli6pE05EmW+uG26qT5terTHYMKMBQBG0v5jsRpZASbAAA=') format('woff2'),
+                url('iconfont.woff?t=1592815378079') format('woff'),
+                url('iconfont.ttf?t=1592815378079') format('truetype'),
+                /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+                url('iconfont.svg?t=1592815378079#iconfont') format('svg');
+            /* iOS 4.1- */
+        }
+
+        .iconfont {
+            font-family: "iconfont" !important;
+            font-size: 16px;
+            font-style: normal;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        .icon-xiangyan:before {
+            content: "\e61a";
+        }
+
+
+
+        .bigbox {
+            width: 500px;
+            height: 600px;
+            background-color: pink;
+            margin: 100px auto;
+            position: relative;
+        }
+
+        .people-body {
+            position: absolute;
+            top: 15%;
+            left: 26%;
+            width: 240px;
+            height: 410px;
+            background-color: yellow;
+            border: 8px solid black;
+            border-radius: 120px;
+            z-index: 999;
+            overflow: hidden;
+            animation: yy .5s infinite;
+        }
+
+        @keyframes yy {
+            0% {
+                margin-left: 5px;
+                height: 400px;
+            }
+        }
+
+        .hair_1 {
+            position: absolute;
+            top: 7%;
+            left: 22%;
+            width: 150px;
+            height: 150px;
+            border-top: 8px solid black;
+            border-radius: 50%;
+            transform: rotate(30deg);
+            animation: aa .5s infinite;
+
+        }
+
+        .hair_2 {
+            position: absolute;
+            top: 3%;
+            left: 23%;
+            width: 150px;
+            height: 150px;
+            border-top: 8px solid black;
+            border-radius: 50%;
+            transform: rotate(70deg);
+            animation: bb .5s infinite;
+        }
+
+        @keyframes aa {
+            0% {
+                margin-left: 10px;
+            }
+        }
+
+        @keyframes bb {
+            0% {
+                margin-top: 10px;
+            }
+        }
+
+        .people-body ul {
+            position: absolute;
+            top: 15%;
+            left: 15%;
+        }
+
+        .people-body ul li {
+            float: left;
+            width: 75px;
+            height: 75px;
+            border-radius: 50%;
+            border: 5px solid black;
+            background-color: #fff;
+        }
+
+        .eye-1 {
+            width: 45px;
+            height: 45px;
+            margin: auto;
+            margin-top: 13px;
+            background-color: black;
+            border-radius: 50%;
+            animation: pp .5s infinite;
+        }
+
+        @keyframes pp {
+            0% {
+                margin-top: 20px;
+            }
+
+            50% {
+                margin-right: 20px;
+            }
+        }
+
+
+        .eye-2 {
+            position: absolute;
+            top: 20px;
+            left: 36px;
+            width: 20px;
+            height: 20px;
+            margin-top: 13px;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: ff 1s infinite;
+        }
+
+        .eye-3 {
+            position: absolute;
+            top: 20px;
+            left: 115px;
+            width: 20px;
+            height: 20px;
+            margin-top: 13px;
+            background-color: #fff;
+            border-radius: 50%;
+            animation: ff 1s infinite;
+        }
+
+        @keyframes ff {
+            0% {
+                margin-left: 10px;
+            }
+
+            50% {
+                margin-top: 10px;
+            }
+
+            100% {
+                margin-left: 0px;
+            }
+        }
+
+        .mouth-1 {
+            position: absolute;
+            top: 150px;
+            left: 75px;
+            width: 90px;
+            height: 50px;
+            background-color: yellow;
+            border-bottom: 5px solid black;
+            z-index: 888;
+        }
+
+        .mouth-2 {
+            position: absolute;
+            top: 173px;
+            left: 75px;
+            width: 78px;
+            height: 40px;
+            transform: rotate(-21deg);
+            border-radius: 20px 20px 13px 20px;
+            background-color: #fff;
+            border: 5px solid black;
+            animation: cc .5s infinite;
+        }
+
+        @keyframes cc {
+            0% {
+                margin-top: 10px;
+            }
+        }
+
+        .pants {
+            width: 100%;
+            height: 200px;
+            background-color: blue;
+            border-top: 8px solid black;
+            margin-top: 300px;
+            animation: mm .5s infinite;
+
+        }
+
+        @keyframes mm {
+            0% {
+                margin-top: 295px;
+            }
+        }
+
+        .pants-band {
+            position: absolute;
+            top: 270px;
+            left: 27%;
+            width: 100px;
+            height: 30px;
+            background-color: blue;
+            border: 8px solid black;
+            border-bottom: none;
+            animation: rr .5s infinite;
+        }
+
+        @keyframes rr {
+            0% {
+                margin-left: 10px;
+            }
+        }
+
+
+
+        .band-left {
+            width: 200px;
+            height: 15px;
+            background-color: blue;
+            border: 6px solid black;
+            transform: rotate(22deg);
+            position: absolute;
+            top: 235px;
+            left: -106px;
+            animation: xx .5s infinite;
+        }
+
+        @keyframes xx {
+            0% {
+                transform: rotate(32deg);
+            }
+        }
+
+        .band-left .pointer {
+            width: 12px;
+            height: 12px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 180px;
+        }
+
+        .band-right {
+            width: 200px;
+            height: 15px;
+            background-color: blue;
+            border: 6px solid black;
+            transform: rotate(-22deg);
+            position: absolute;
+            top: 235px;
+            left: 138px;
+            animation: cc .5s infinite;
+        }
+
+        @keyframes cc {
+            0% {
+                transform: rotate(-32deg);
+            }
+        }
+
+        .band-right .pointer {
+            width: 12px;
+            height: 12px;
+            background-color: black;
+            border-radius: 50%;
+            position: absolute;
+            top: 2px;
+            left: 10px;
+        }
+
+        .eye-band1 {
+            position: absolute;
+            top: 20%;
+            left: -4%;
+            width: 50px;
+            height: 35px;
+            background-color: black;
+            transform: skew(2deg, 16deg);
+            animation: ii .5s infinite;
+        }
+
+        .eye-band2 {
+            position: absolute;
+            top: 20%;
+            left: 84%;
+            width: 50px;
+            height: 35px;
+            background-color: black;
+            transform: skew(-3deg, -16deg);
+            animation: ii .5s infinite;
+        }
+
+        @keyframes ii {
+            0% {
+                transform: skew(0deg, 0deg);
+            }
+        }
+
+        .left-foot {
+            width: 40px;
+            height: 80px;
+            background-color: black;
+            position: absolute;
+            bottom: 35px;
+            left: 43%;
+            animation: dd .5s infinite;
+        }
+
+        .l-fot {
+            width: 30px;
+            height: 30px;
+            border-radius: 50% 0px 0px 50%;
+            background-color: black;
+            position: absolute;
+            bottom: 35px;
+            left: 37%;
+            animation: dd .5s infinite;
+        }
+
+        @keyframes dd {
+            0% {
+                margin-left: 10px;
+            }
+        }
+
+        .right-foot {
+            width: 40px;
+            height: 80px;
+            background-color: black;
+            position: absolute;
+            bottom: 35px;
+            left: 54%;
+            animation: ee .5s infinite;
+        }
+
+        .r-fot {
+            width: 30px;
+            height: 30px;
+            border-radius: 0px 50% 50% 0px;
+            background-color: black;
+            position: absolute;
+            bottom: 35px;
+            left: 62%;
+            animation: ee .5s infinite;
+        }
+
+        @keyframes ee {
+            0% {
+                margin-bottom: 20px;
+            }
+        }
+
+        .left-arm {
+            width: 150px;
+            height: 60px;
+            border: 8px solid black;
+            background-color: yellow;
+            border-radius: 15px;
+            position: absolute;
+            top: 50%;
+            left: 14%;
+            transform: rotate(-60deg);
+            animation: hh .5s infinite;
+        }
+
+        .right-arm {
+            width: 150px;
+            height: 60px;
+            border: 8px solid black;
+            background-color: yellow;
+            border-radius: 15px;
+            position: absolute;
+            top: 50%;
+            left: 55%;
+            transform: rotate(60deg);
+            animation: hh .5s infinite;
+        }
+
+        @keyframes hh {
+            0% {
+                margin-top: 10px;
+            }
+
+            50% {
+                margin-left: 10px;
+            }
+        }
+
+        .iconfont {
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            top: 46%;
+            left: 22%;
+            font-size: 80px;
+            color: rgb(39, 31, 3);
+            z-index: 9999;
+            animation: tt .5s infinite;
+        }
+
+        @keyframes tt {
+            0% {
+                margin-top: 10px;
+            }
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="bigbox">
+        <div class="people-body">
+            <ul>
+                <li>
+                    <div class="eye-1">
+                        <div class="eye-2">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="eye-1">
+                        <div class="eye-3">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+            <div class="mouth-1"></div>
+            <div class="mouth-2"></div>
+            <i class="iconfont icon-xiangyan"></i>
+
+            <div class="pants"></div>
+            <div class="pants-band"></div>
+            <div class="band-left">
+                <div class="pointer"></div>
+            </div>
+            <div class="band-right">
+                <div class="pointer"></div>
+            </div>
+            <div class="eye-band1"></div>
+            <div class="eye-band2"></div>
+        </div>
+
+
+        <div class="hair_1"></div>
+        <div class="hair_2"></div>
+        <div class="left-foot"></div>
+        <div class="right-foot"></div>
+        <div class="l-fot"></div>
+        <div class="r-fot"></div>
+
+        <div class="left-arm"></div>
+        <div class="right-arm"></div>
+
+
+
+    </div>
+
+
+
+
+
+</body>
+
+</html>
